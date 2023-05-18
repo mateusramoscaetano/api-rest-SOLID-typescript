@@ -8,13 +8,13 @@ export class CreateUserController {
     const { name, email, password } = request.body;
 
     try {
-      await this.createUserUseCase.execute({
+      const createdUser = await this.createUserUseCase.execute({
         name,
         email,
         password,
       });
 
-      return response.status(201).send();
+      return response.status(201).json(createdUser);
     } catch (error) {
       return response
         .status(400)
