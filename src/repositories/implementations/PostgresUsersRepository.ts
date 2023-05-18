@@ -1,4 +1,3 @@
-import { DeleteUser } from "../../entities/DeleteUser";
 import { User } from "../../entities/User";
 import { IUserRepository } from "../IUserRepository";
 
@@ -25,10 +24,14 @@ export class PostgresUsersRepository implements IUserRepository {
 
     return user;
   }
+  async findById(id: string): Promise<User> {
+    const user = this.users.find((user) => user.id === id);
+
+    return user;
+  }
 
   async update(user: User): Promise<void> {
     const userIndex = this.users.findIndex((u) => u.id === user.id);
-    console.log(user);
 
     if (userIndex !== -1) {
       this.users[userIndex] = user;

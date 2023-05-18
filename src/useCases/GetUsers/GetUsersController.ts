@@ -12,7 +12,7 @@ export class GetUsersController {
     } catch (error) {
       return response
         .status(400)
-        .json({ message: error || "Unexpected error" });
+        .json({ message: error.message || "Unexpected error" });
     }
   }
 }

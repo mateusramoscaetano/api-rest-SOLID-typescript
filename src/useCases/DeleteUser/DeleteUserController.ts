@@ -11,8 +11,8 @@ export class DeleteUserController {
       await this.deleteUserUseCase.execute({ id });
 
       return response.status(204).send();
-    } catch (err) {
-      return response.status(500).json({ error: "Erro ao excluir usuário." });
+    } catch (error) {
+      return response.status(500).json({ message: error.message });
     }
   }
 }
