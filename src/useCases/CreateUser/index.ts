@@ -4,7 +4,7 @@ import { CreateUserController } from "./CreateUserController";
 import { CreateUserUseCase } from "./CreateUserUseCase";
 
 const mailTrapProvider = new MailTrapMailProvider();
-const postgresUsersRepository = new PostgresUsersRepository();
+const postgresUsersRepository = PostgresUsersRepository.getInstance();
 
 const createUserUseCase = new CreateUserUseCase(
   postgresUsersRepository,
