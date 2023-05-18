@@ -27,7 +27,12 @@ export class PostgresUsersRepository implements IUserRepository {
   }
 
   async update(user: User): Promise<void> {
-    this.users.push(user);
+    const userIndex = this.users.findIndex((u) => u.id === user.id);
+    console.log(user);
+
+    if (userIndex !== -1) {
+      this.users[userIndex] = user;
+    }
   }
 
   async delete(id: string): Promise<void> {
