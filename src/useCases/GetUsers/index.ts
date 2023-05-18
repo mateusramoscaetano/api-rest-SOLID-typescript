@@ -2,7 +2,7 @@ import { PostgresUsersRepository } from "../../repositories/implementations/Post
 import { GetUsersController } from "./GetUsersController";
 import { GetUsersUseCase } from "./GetUsersUseCase";
 
-const postgresUsersRepository = new PostgresUsersRepository();
+const postgresUsersRepository = PostgresUsersRepository.getInstance();
 
 const getUsersUseCase = new GetUsersUseCase(postgresUsersRepository);
 

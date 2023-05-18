@@ -3,7 +3,18 @@ import { User } from "../../entities/User";
 import { IUserRepository } from "../IUserRepository";
 
 export class PostgresUsersRepository implements IUserRepository {
+  private static instance: PostgresUsersRepository;
   private users: User[] = [];
+
+  private constructor() {}
+
+  public static getInstance(): PostgresUsersRepository {
+    if (!PostgresUsersRepository.instance) {
+      PostgresUsersRepository.instance = new PostgresUsersRepository();
+    }
+
+    return PostgresUsersRepository.instance;
+  }
 
   async list(): Promise<User[]> {
     return this.users;

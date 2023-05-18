@@ -2,7 +2,7 @@ import { PostgresUsersRepository } from "../../repositories/implementations/Post
 import { DeleteUserController } from "./DeleteUserController";
 import { DeleteUserUseCase } from "./DeleteUserUseCase";
 
-const postgresUsersRepository = new PostgresUsersRepository();
+const postgresUsersRepository = PostgresUsersRepository.getInstance();
 
 const deleteUserUseCase = new DeleteUserUseCase(postgresUsersRepository);
 

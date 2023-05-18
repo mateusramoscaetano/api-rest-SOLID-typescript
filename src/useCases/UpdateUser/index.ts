@@ -2,7 +2,7 @@ import { PostgresUsersRepository } from "../../repositories/implementations/Post
 import { UpdateUserController } from "./UpdateUserController";
 import { UpdateUserUseCase } from "./UpdateUserUseCaseDTO";
 
-const postgresUsersRepository = new PostgresUsersRepository();
+const postgresUsersRepository = PostgresUsersRepository.getInstance();
 
 const updateUserUseCase = new UpdateUserUseCase(postgresUsersRepository);
 
