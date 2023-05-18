@@ -12,7 +12,7 @@ router.get("/users", (request, response) => {
 router.post("/users", (request, response) => {
   return createUserController.handle(request, response);
 });
-router.put("/users", (request, response) => {
+router.put("/users/:id", (request, response) => {
   return updateUserController.handleUpdate(request, response);
 });
 router.delete("/users/:id", (request, response) => {

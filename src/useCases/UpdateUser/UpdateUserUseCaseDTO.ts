@@ -11,8 +11,9 @@ export class UpdateUserUseCase {
       throw new Error("User not found");
     }
 
-    const user = new UpdateUser(data);
+    userExist.name = data.name;
+    userExist.email = data.email;
 
-    await this.userRepository.update(user);
+    await this.userRepository.update(userExist);
   }
 }
