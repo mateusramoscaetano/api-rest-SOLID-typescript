@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { UpdateUserUseCase } from "./UpdateUserUseCaseDTO";
+import { UpdateUserUseCase } from "./UpdateUserUseCase";
 
 export class UpdateUserController {
   constructor(private updateUserUseCase: UpdateUserUseCase) {}
